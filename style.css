@@ -1,62 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My SCST1133 E-Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Your Name</h1>
-    <p>SCST1133 Data Engineering Ecosystem</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#work">Selected Work</a>
-      <a href="#reflection">Reflection</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="about">
-      <h2>Professional Profile</h2>
-      <p>Write a short professional introduction here.</p>
-    </section>
-
-    <section id="work">
-      <h2>Selected Work</h2>
-      <article>
-        <h3>Design Thinking and Figma</h3>
-        <img src="images/project-screenshot.png"
-             alt="Screenshot of my Figma prototype">
-        <p>Explain the artifact and your contribution.</p>
-      </article>
-    </section>
-
-    <section id="reflection">
-      <h2>Course Reflection</h2>
-      <p>Explain what you learned and what you would improve.</p>
-    </section>
-  </main>
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
-  color: #1f2937;
-  background: #f5f7fa;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  color: #e2e8f0;
+  background: #0f172a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
 }
+
 header, main, footer {
-  width: min(960px, 92%);
+  width: min(800px, 90%);
   margin: auto;
 }
-header { padding: 48px 0 24px; }
-nav { display: flex; flex-wrap: wrap; gap: 16px; }
-section {
-  margin: 20px 0;
-  padding: 24px;
-  background: white;
-  border-radius: 12px;
+
+header { 
+  padding: 60px 0 30px; 
+  text-align: center; 
 }
-img { max-width: 100%; height: auto; }
-a { color: #8a1538; }
+
+header h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+nav { 
+  display: flex; 
+  justify-content: center;
+  gap: 24px; 
+  margin-top: 20px;
+}
+
+nav a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  margin: 30px 0;
+  padding: 32px;
+  background: #1e293b; 
+  color: #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); 
+}
+
+section h2 {
+  color: #38bdf8;
+  margin-top: 0;
+  border-bottom: 2px solid #334155;
+  padding-bottom: 8px;
+}
+
+img { 
+  max-width: 100%; 
+  height: auto; 
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  color: #64748b;
+  padding: 40px 0;
+}
