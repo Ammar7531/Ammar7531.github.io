@@ -70,26 +70,30 @@
           <h3>Industry Talk: JOM CONNECT, LINK UP LEVEL UP</h3>
           <p style="margin-top: 10px;"><strong>Program Summary:</strong> Participated in an intensive career and industry insights briefing tailored for tech undergraduates. The session provided a comprehensive overview of Malaysia's digital economic landscape, essential technical skills, and practical strategies to transition smoothly from university into the tech industry.</p>
           
+          <!-- SEKSYEN KAD SPEAKER (BOLEH TEKAN) -->
           <div style="margin: 25px 0; text-align: center;">
-            <h4>Event Speakers</h4>
-            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px;">
-              <div>
-                <img src="images/speaker1.jpg" alt="Speaker 1" style="width: 220px; height: 150px; object-fit: cover; border-radius: 6px;">
-                <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 5px;">Speaker 1: Industry Landscape & Job Market</p>
+            <h4 style="margin-bottom: 15px;">Click a Speaker to View Details</h4>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+              
+              <!-- Kad Speaker 1 -->
+              <div class="speaker-card active" onclick="openSpeaker(event, 'part-1')">
+                <img src="images/speaker1.jpg" alt="Speaker 1" style="width: 100%; height: 140px; object-fit: cover; border-radius: 6px;">
+                <p style="font-size: 0.9rem; font-weight: bold; color: #38bdf8; margin-top: 8px;">Speaker 1</p>
+                <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 3px;">Industry Landscape & Job Market</p>
               </div>
-              <div>
-                <img src="images/speaker2.jpg" alt="Speaker 2" style="width: 220px; height: 150px; object-fit: cover; border-radius: 6px;">
-                <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 5px;">Speaker 2: Tech Skills & Career Action Plan</p>
+
+              <!-- Kad Speaker 2 -->
+              <div class="speaker-card" onclick="openSpeaker(event, 'part-2')">
+                <img src="images/speaker2.jpg" alt="Speaker 2" style="width: 100%; height: 140px; object-fit: cover; border-radius: 6px;">
+                <p style="font-size: 0.9rem; font-weight: bold; color: #38bdf8; margin-top: 8px;">Speaker 2</p>
+                <p style="font-size: 0.8rem; color: #94a3b8; margin-top: 3px;">Tech Skills & Career Action Plan</p>
               </div>
+
             </div>
           </div>
 
-          <div style="margin: 20px 0; text-align: center;">
-            <a href="#part-1" style="background: #2563eb; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; margin-right: 10px; display: inline-block;">Jump to Part 1: Industry Landscape</a>
-            <a href="#part-2" style="background: #2563eb; color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; display: inline-block;">Jump to Part 2: Skills & Action Plan</a>
-          </div>
-
-          <div id="part-1" style="margin-top: 30px; border-top: 1px solid #334155; padding-top: 20px;">
+          <!-- KANDUNGAN PART 1 (Buka secara lalai) -->
+          <div id="part-1" class="speaker-content active">
             <h4>Part 1: The Map & Industry Landscape</h4>
             <ul style="margin-top: 10px;">
               <li><strong>Local Data Hub Growth:</strong> Analysed Johor's rapid transformation into Southeast Asia's data centre capital, hosting over 65 active/planned data centre projects and massive foreign investments.</li>
@@ -101,7 +105,8 @@
             </div>
           </div>
 
-          <div id="part-2" style="margin-top: 30px; border-top: 1px solid #334155; padding-top: 20px;">
+          <!-- KANDUNGAN PART 2 (Tersembunyi secara lalai) -->
+          <div id="part-2" class="speaker-content">
             <h4>Part 2: In-Demand Skills & Action Plan</h4>
             <ul style="margin-top: 10px;">
               <li><strong>Core Technical Stack:</strong> Emphasised the necessity of mastering SQL, Python & Pandas, ETL pipelines, and cloud platforms (AWS/Azure) for data engineering roles.</li>
@@ -112,10 +117,10 @@
               <p style="font-size: 0.85rem; color: #94a3b8; margin-top: 5px;">Figure: Slide outlining core technical skills and free tier global academies.</p>
             </div>
           </div>
+
         </article>
       </section>
 
-      <!-- SEKSYEN KEMASKINI: Leadership, Achievements & Extracuriculum -->
       <section id="involvement">
         <h2>Leadership, Achievements & Extracuriculum</h2>
         
@@ -163,9 +168,26 @@
     </footer>
   </div>
 
-  <!-- JavaScript Animasi -->
+  <!-- JavaScript Skrip untuk Tab Switcher & Particles -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
+    // Fungsi Switcher Tab Speaker
+    function openSpeaker(evt, partId) {
+      var contents = document.querySelectorAll('.speaker-content');
+      contents.forEach(function(content) {
+        content.classList.remove('active');
+      });
+
+      var cards = document.querySelectorAll('.speaker-card');
+      cards.forEach(function(card) {
+        card.classList.remove('active');
+      });
+
+      document.getElementById(partId).classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+
+    // Config Particles.js
     particlesJS("particles-js", {
       "particles": {
         "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
